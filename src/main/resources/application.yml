@@ -1,0 +1,29 @@
+spring:
+  freemarker:
+    cache: true
+    charset: utf-8
+    content-type: text/html
+    check-template-location: true
+  devtools:
+    restart:
+      enabled: true
+      additional-paths: src/main/java
+      exclude: WEB-INF/**
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:8889/springboot_test?useUnicode=true&useSSL=true
+    username: root
+    password: 123456
+
+mybatis:
+  type-aliases-package: kare.testboot.testspringboot.domain
+  mapper-locations: classpath:mapper/*Mapper.xml
+  config-location: classpath:mapper/config/sqlMapConfig.xml
+server:
+  port: 8443
+  ssl:
+    key-store: classpath:keystore/springboot.keystore
+    key-store-password: 123456
+    key-alias: springboot
+    key-store-type: PKCS12
+
